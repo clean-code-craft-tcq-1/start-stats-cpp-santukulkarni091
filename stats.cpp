@@ -2,7 +2,7 @@
 #include <iostream>
 #include <algorithm>
 #include <math.h>
-#include "stat.h"
+#include "stats.h"
 using namespace std;
 
 
