@@ -7,5 +7,5 @@ namespace Statistics {
         stats();
         stats(float X, float Y, float Z); 
         void ComputeStatistics();
-    }
+    };
 }
