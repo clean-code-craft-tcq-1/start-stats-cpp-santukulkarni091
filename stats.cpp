@@ -1,21 +1,31 @@
-#include "stats.h"
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <math.h>
+#include "stat.h"
 using namespace std;
 
-namespace Statistics
-{
-   stats::stats(float X, float Y, float Z)
-   {
-       x = X;
-       y = Y;
-       z = Z;
-   }
-void stats::ComputeStatistics() 
-{
-    //Implement statistics here
-    avg = (x + y + z)/3;
-    max = std::max({x, y, z});
-    min = std::min({x, y, z});
-    
-}
 
+
+Statistics::ComputeStatistics::ComputeStatistics(const std::vector<float> &ar)
+{
+    float sum;
+    computeStatistics = ar;
+    
+    if(computeStatistics.size() == 0)
+    {
+    average = NAN;
+    min = NAN;
+    max = NAN;
+    }
+    else
+    {
+        minimum = *std::min_element(computeStatistics.begin(), computeStatistics.end());
+        maximum = *std::max_element(computeStatistics.begin(), computeStatistics.end());
+        for(int i = 0; i < computeStatistics.size(); i++)
+        {
+            sum += computeStatistics.at(i);
+            average =  sum/computeStatistics.size();
+        }
+    }
 }
