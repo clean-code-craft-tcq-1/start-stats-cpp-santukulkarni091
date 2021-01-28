@@ -1,11 +1,16 @@
+#include <iostream>
+using namespace std;
 #include <vector>
-
 namespace Statistics {
-    class stats
-    {
-        float x,y,z,max,min,avg; 
-        stats();
-        stats(float X, float Y, float Z); 
-        void ComputeStatistics();
-    };
+   class ComputeStatistics {
+    private:
+        std::vector<float> computeStatistics;
+
+   public:
+    float maxi;
+    float min;
+    float average;
+   ComputeStatistics(const std::vector<float> &ar);
+   
+};// just tell the compiler to expect a class def
 }
