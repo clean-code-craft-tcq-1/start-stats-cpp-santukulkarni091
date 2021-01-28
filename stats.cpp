@@ -20,8 +20,8 @@ Statistics::ComputeStatistics::ComputeStatistics(const std::vector<float> &ar)
     }
     else
     {
-        minimum = *std::min_element(computeStatistics.begin(), computeStatistics.end());
-        maximum = *std::max_element(computeStatistics.begin(), computeStatistics.end());
+        min = *std::min_element(computeStatistics.begin(), computeStatistics.end());
+        max = *std::max_element(computeStatistics.begin(), computeStatistics.end());
         for(int i = 0; i < computeStatistics.size(); i++)
         {
             sum += computeStatistics.at(i);
